@@ -8,6 +8,6 @@ RUN  ls target
 
 FROM java:8
 WORKDIR /app/
-COPY --from=builder /work/target/helloworld.jar .
+COPY --from=builder /work/target/demo-0.0.1-SNAPSHOT.jar .
 EXPOSE 8081
-CMD ["java","-jar","/app/atms-back-1.0.jar"]
+CMD ["java","-jar","/app/demo-0.0.1-SNAPSHOT.jar"]
