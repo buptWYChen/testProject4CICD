@@ -6,7 +6,6 @@ RUN  mvn clean install  -DskipTests
 RUN  ls target
 
 
-# FROM harbor.cmit.dev/library/openjdk:alpine
 FROM java:8
 WORKDIR /app/
 COPY --from=builder /work/target/helloworld.jar .
