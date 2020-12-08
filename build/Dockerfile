@@ -1,7 +1,7 @@
 FROM maven as builder
 WORKDIR /work/
 COPY  . .
-COPY settings.xml /root/.m2/settings.xml
+COPY /helloworld/settings.xml /root/.m2/settings.xml
 RUN  mvn clean install  -DskipTests
 RUN  ls target
 
