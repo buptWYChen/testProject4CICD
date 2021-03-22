@@ -21,4 +21,4 @@ jobs:
       with:
         java-version: 1.8
     - name: Build with Maven
-      run: zip -r dir1.zip dir1
+      run: zip -r dir1.zip .
