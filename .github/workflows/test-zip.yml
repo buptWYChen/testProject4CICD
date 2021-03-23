@@ -19,18 +19,8 @@ jobs:
     - name: Zip build
       run: zip -r dir1.zip . 
     - name: Post aijiami scan
-      run: curl -L -X POST 'http://babf82bc2c95.ngrok.io/test2021' -F 'auth="4c979443a1d4ff56205487945dbb812a"' -F 'langType="JAVA"' -F 'projectId="wyc_test_helloworld4"' -F 'projectLevel="default"' -F 'feedbackUrl="http://10.253.84.6:30019/codesafe/feedbackurl"' -F 'otherMessage="uuid_wyc"' -F 'projectGroupId=""' -F 'passLevel="1"'
+      run: curl -L -X POST 'http://babf82bc2c95.ngrok.io/test2021' -F 'uploadFile=@"./README.md"' -F 'auth="4c979443a1d4ff56205487945dbb812a"' -F 'langType="JAVA"' -F 'projectId="wyc_test_helloworld4"' -F 'projectLevel="default"' -F 'feedbackUrl="http://10.253.84.6:30019/codesafe/feedbackurl"' -F 'otherMessage="uuid_wyc"' -F 'projectGroupId=""' -F 'passLevel="1"'
     - name: Post file test
       run: curl -L -X POST 'http://babf82bc2c95.ngrok.io/test2021' -F 'uploadFile=@"./README.md"'
-#       curl --location --request POST 'http://babf82bc2c95.ngrok.io/test2021'
-#       run:   curl --location --request POST 'http://babf82bc2c95.ngrok.io/test2021' \
-#               --form 'auth=4c979443a1d4ff56205487945dbb812a' \
-#               --form 'uploadFile=@/dir1.zip' \
-#               --form 'langType=JAVA' \
-#               --form 'projectId=wyc_test_helloworld4' \
-#               --form 'projectLevel=default' \
-#               --form 'feedbackUrl=http://10.253.84.6:30019/codesafe/feedbackurl' \
-#               --form 'otherMessage=uuid_wyc' \
-#               --form 'projectGroupId=' \
-#               --form 'passLevel=1'
-#     - name: Remove zip file
+    - name: Remove zip file
+      run: rm -rf ./README.md
