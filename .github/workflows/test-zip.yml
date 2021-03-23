@@ -16,5 +16,17 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: zip build
-      run: zip -r dir1.zip .
+    - name: Zip build
+      run: zip -r dir1.zip . 
+    - name: Post aijiami scan
+      run:   curl --location --request POST ' http://4b8b6b0d9cec.ngrok.io/test2021' \
+              --form 'auth=4c979443a1d4ff56205487945dbb812a' \
+              --form 'uploadFile=@/dir1.zip' \
+              --form 'langType=JAVA' \
+              --form 'projectId=wyc_test_helloworld4' \
+              --form 'projectLevel=default' \
+              --form 'feedbackUrl=http://10.253.84.6:30019/codesafe/feedbackurl' \
+              --form 'otherMessage=uuid_wyc' \
+              --form 'projectGroupId=' \
+              --form 'passLevel=1'
+#     - name: Remove zip file
