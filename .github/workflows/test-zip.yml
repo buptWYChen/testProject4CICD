@@ -19,7 +19,7 @@ jobs:
     - name: Zip build
       run: zip -r dir1.zip . 
     - name: Post aijiami scan
-      run:   curl --location --request POST ' http://4b8b6b0d9cec.ngrok.io/test2021' \
+      run:   curl --location --request POST 'http://babf82bc2c95.ngrok.io/test2021' \
               --form 'auth=4c979443a1d4ff56205487945dbb812a' \
               --form 'uploadFile=@/dir1.zip' \
               --form 'langType=JAVA' \
