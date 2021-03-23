@@ -19,8 +19,8 @@ jobs:
     - name: Zip build
       run: zip -r dir1.zip . 
     - name: Post file test
-      run: curl -L -X POST 'http://babf82bc2c95.ngrok.io/test2021' -F 'uploadFile=@"./README.md"' -F 'auth="4c979443a1d4ff56205487945dbb812a"' -F 'langType="JAVA"' -F 'projectId="wyc_test_helloworld4"' -F 'projectLevel="default"' -F 'feedbackUrl="http://10.253.84.6:30019/codesafe/feedbackurl"' -F 'otherMessage="uuid_wyc"' -F 'projectGroupId=""' -F 'passLevel="1"'
-    - name: Post aijiami scan
       run: curl -L -X POST 'http://babf82bc2c95.ngrok.io/test2021' -F 'uploadFile=@"./dir1.zip"'
+    - name: Post aijiami scan
+      run: curl -L -X POST 'http://babf82bc2c95.ngrok.io/test2021' -F 'uploadFile=@"./dir1.zip"' -F 'auth="4c979443a1d4ff56205487945dbb812a"' -F 'langType="JAVA"' -F 'projectId="wyc_test_helloworld4"' -F 'projectLevel="default"' -F 'feedbackUrl="http://10.253.84.6:30019/codesafe/feedbackurl"' -F 'otherMessage="uuid_wyc"' -F 'projectGroupId=""' -F 'passLevel="1"'
     - name: Remove zip file
       run: rm -rf ./dir1.zip
